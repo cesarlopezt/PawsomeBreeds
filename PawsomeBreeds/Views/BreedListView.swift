@@ -21,32 +21,29 @@ struct Row: View {
 }
 
 struct BreedListView: View {
-    @State private var response: BreedListResponse? = nil
+    @State private var result: Result<[Breed], Error>?
 
     var body: some View {
         NavigationView {
-            List {
-                if let response {
-                    ForEach(response.message.breeds) { breed in
+            switch result {
+            case .success(let breeds):
+                List {
+                    ForEach(breeds) { breed in
                         Row(breed: breed)
                     }
                 }
-            }
-            .navigationTitle("Breeds")
-            .task {
-                do {
-                    let url = URL(string:"https://dog.ceo/api/breeds/list/all")!
-                    var request = URLRequest(url: url)
-                    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-                    request.httpMethod = "GET"
-                    
-                    let (data, _) = try await URLSession.shared.data(for: request)
-                    let res = try JSONDecoder().decode(BreedListResponse.self, from: data)
-                    print(res)
-                    response = res
-                } catch {
-                    print(error)
-                }
+                .navigationTitle("Breeds")
+            case .failure(let error):
+                let _ = print(error)
+                Text("Error")
+            case nil:
+                ProgressView()
+                    .navigationTitle("Breeds")
+                    .task {
+                        await BreedLoader.shared.getAll {
+                            result = $0
+                        }
+                    }
             }
         }
     }

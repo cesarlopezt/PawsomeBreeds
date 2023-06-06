@@ -42,48 +42,41 @@ struct ImageGrid: View {
 
 struct BreedDetailView: View {
     var breed: Breed
-    @State private var response: BreedImagesResponse? = nil
+    @State private var result: Result<[String], Error>?
 
     var body: some View {
-        ScrollView(showsIndicators: false) {
-            if let response {
-                ImageGrid(images: response.message)
+        switch result {
+        case .success(let images):
+            ScrollView(showsIndicators: false) {
+                ImageGrid(images: images)
             }
-        }
+            .background(breed.color.opacity(0.3))
             .navigationTitle(breed.breedText)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                    ToolbarItemGroup(placement: .navigationBarTrailing) {
-                        if let breedColor = breed.color {
-                            Circle().foregroundColor(breedColor.opacity(0.7))
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        Task {
+                            await BreedLoader.shared.getImages(breed: breed.name, subbreed: breed.subbreed) {
+                                result = $0
+                            }
                         }
-                        Button {
-                            
-                        } label: {
-                            Label("Refresh", systemImage: "arrow.clockwise")
-                        }
-                }
-            }
-            .task {
-                do {
-                    let url: URL
-                    if let subbreed = breed.subbreed {
-                        url = URL(string:"https://dog.ceo/api/breed/\(breed.name)/\(subbreed)/images/random/15")!
-                    } else {
-                        url = URL(string:"https://dog.ceo/api/breed/\(breed.name)/images/random/15")!
+                    } label: {
+                        Label("Refresh", systemImage: "arrow.clockwise")
                     }
-                    var request = URLRequest(url: url)
-                    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-                    request.httpMethod = "GET"
-                    
-                    let (data, _) = try await URLSession.shared.data(for: request)
-                    let res = try JSONDecoder().decode(BreedImagesResponse.self, from: data)
-                    print(res)
-                    response = res
-                } catch {
-                    print(error)
                 }
             }
+        case .failure(let error):
+            let _ = print(error)
+            Text("Error")
+        case nil:
+            ProgressView()
+                .task {
+                    await BreedLoader.shared.getImages(breed: breed.name, subbreed: breed.subbreed) {
+                        result = $0
+                    }
+                }
+        }
     }
 }
 

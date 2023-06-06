@@ -11,7 +11,16 @@ import SwiftUI
 struct PawsomeBreedsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                BreedListView()
+                    .tabItem {
+                        Label("Breeds", systemImage: "pawprint.fill")
+                    }
+                VStack {}
+                    .tabItem {
+                        Label("Favorites", systemImage: "star.fill")
+                    }
+            }
         }
     }
 }

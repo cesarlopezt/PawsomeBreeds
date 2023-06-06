@@ -7,12 +7,7 @@
 
 import Foundation
 
-struct BreedListResponse: Codable {
-    let message: BreedList
-    let status: String
-}
-
-struct BreedImagesResponse: Codable {
-    let message: [String]
+struct Response<Message: Codable>: Codable {
+    let message: Message
     let status: String
 }
