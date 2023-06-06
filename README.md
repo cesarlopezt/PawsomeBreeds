@@ -1,5 +1,21 @@
 # PawsomeBreeds
 
+> Experimental branch to cache images
+>
+> Test: Load images for 6 breeds and refresh 6 times for each one
+>
+> **Conclusion:** The decision of whether to cache images or not depends on our prioritization of memory usage versus reducing network calls. To make an informed choice, we can consider whether users tend to frequently view the same breed or primarily engage in browsing to discover new breeds.
+
+> **Without caching**
+> 
+> <img width="297" alt="image" src="https://github.com/cesarlopezt/PawsomeBreeds/assets/4370350/3a2ce9e2-a57c-4d98-b5ef-f3367dc1394b">
+
+> **Caching**
+> 
+> <img width="297" alt="image" src="https://github.com/cesarlopezt/PawsomeBreeds/assets/4370350/2d861764-97fb-443e-9556-9afa863c80f4">
+
+
+
 PawsomeBreeds is an iOS app designed to provide dog lovers with a comprehensive list of dog breeds 
 along with a collection of stunning pictures for each breed. With PawsomeBreeds, you can explore various 
 dog breeds, view their images, and even save your favorite breeds for quick access.
