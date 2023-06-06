@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct BreedDetailView: View {
-    var breed: Breed
+    @EnvironmentObject var favoritesStorage: FavoritesStorage
     @State private var result: Result<[String], Error>?
+    var breed: Breed
 
     var body: some View {
         switch result {
@@ -21,7 +22,14 @@ struct BreedDetailView: View {
             .navigationTitle(breed.breedText)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    Button {
+                        favoritesStorage.toggle(breed: breed)
+                    } label: {
+                        let isFavorite = favoritesStorage.contains(breed)
+                        Label("Refresh", systemImage: isFavorite ? "star.fill" : "star")
+                            .foregroundColor(isFavorite ? .accentColor : nil)
+                    }
                     Button {
                         Task {
                             await BreedLoader.shared.getImages(breed: breed.name, subbreed: breed.subbreed) {

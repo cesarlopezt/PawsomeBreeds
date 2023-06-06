@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct BreedListView: View {
+    @EnvironmentObject var favoritesStorage: FavoritesStorage
     @State private var result: Result<[Breed], Error>?
 
     var body: some View {
@@ -16,7 +17,9 @@ struct BreedListView: View {
             case .success(let breeds):
                 List {
                     ForEach(breeds) { breed in
-                        BreedRow(breed: breed)
+                        BreedRow(breed: breed, isFavorite: favoritesStorage.contains(breed), showStar: true) {
+                                favoritesStorage.toggle(breed: breed)
+                            }
                     }
                 }
                 .navigationTitle("Breeds")

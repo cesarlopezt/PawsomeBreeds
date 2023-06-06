@@ -17,6 +17,8 @@
 		DBC05FAF2A2ECCC800429A76 /* BreedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC05FAE2A2ECCC800429A76 /* BreedLoader.swift */; };
 		DBC05FB12A2EE03700429A76 /* BreedRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC05FB02A2EE03700429A76 /* BreedRow.swift */; };
 		DBC05FB32A2EE08500429A76 /* ImageGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC05FB22A2EE08500429A76 /* ImageGrid.swift */; };
+		DBC05FB62A2EE28800429A76 /* FavoritesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC05FB52A2EE28800429A76 /* FavoritesStorage.swift */; };
+		DBC05FB82A2EE5D900429A76 /* FavoritesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC05FB72A2EE5D900429A76 /* FavoritesListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		DBC05FAE2A2ECCC800429A76 /* BreedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedLoader.swift; sourceTree = "<group>"; };
 		DBC05FB02A2EE03700429A76 /* BreedRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedRow.swift; sourceTree = "<group>"; };
 		DBC05FB22A2EE08500429A76 /* ImageGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGrid.swift; sourceTree = "<group>"; };
+		DBC05FB52A2EE28800429A76 /* FavoritesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesStorage.swift; sourceTree = "<group>"; };
+		DBC05FB72A2EE5D900429A76 /* FavoritesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 		DBC05F8C2A2E538B00429A76 /* PawsomeBreeds */ = {
 			isa = PBXGroup;
 			children = (
+				DBC05FB42A2EE25000429A76 /* Storages */,
 				DBC05FA22A2E91E200429A76 /* Views */,
 				DBC05F9F2A2E7BD900429A76 /* Networking */,
 				DBC05F9C2A2E692800429A76 /* Models */,
@@ -105,10 +110,19 @@
 			children = (
 				DBC05FA52A2E926200429A76 /* BreedListView.swift */,
 				DBC05FAC2A2EB7F600429A76 /* BreedDetailView.swift */,
+				DBC05FB72A2EE5D900429A76 /* FavoritesListView.swift */,
 				DBC05FB02A2EE03700429A76 /* BreedRow.swift */,
 				DBC05FB22A2EE08500429A76 /* ImageGrid.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		DBC05FB42A2EE25000429A76 /* Storages */ = {
+			isa = PBXGroup;
+			children = (
+				DBC05FB52A2EE28800429A76 /* FavoritesStorage.swift */,
+			);
+			path = Storages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,7 +195,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBC05FB82A2EE5D900429A76 /* FavoritesListView.swift in Sources */,
 				DBC05FA62A2E926200429A76 /* BreedListView.swift in Sources */,
+				DBC05FB62A2EE28800429A76 /* FavoritesStorage.swift in Sources */,
 				DBC05F9E2A2E697300429A76 /* Responses.swift in Sources */,
 				DBC05FB12A2EE03700429A76 /* BreedRow.swift in Sources */,
 				DBC05FB32A2EE08500429A76 /* ImageGrid.swift in Sources */,

@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct PawsomeBreedsApp: App {
+    @StateObject private var favoritesStorage = FavoritesStorage()
+    
     var body: some Scene {
         WindowGroup {
             TabView {
@@ -16,11 +18,12 @@ struct PawsomeBreedsApp: App {
                     .tabItem {
                         Label("Breeds", systemImage: "pawprint.fill")
                     }
-                VStack {}
+                FavoritesListView()
                     .tabItem {
                         Label("Favorites", systemImage: "star.fill")
                     }
             }
+            .environmentObject(favoritesStorage)
         }
     }
 }

@@ -36,13 +36,15 @@ struct BreedList: Codable {
             }
         }
         breeds = tempBreeds.sorted(by: { b1, b2 in
-            b1.name < b2.name
+            b1.breedText < b2.breedText
         })
     }
 }
 
 struct Breed: Hashable, Identifiable, Codable {
-    var id = UUID()
+    var id: String {
+        return "\(name)_\(subbreed ?? "")"
+    }
     let name: String
     let subbreed: String?
     
