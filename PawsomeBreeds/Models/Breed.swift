@@ -48,17 +48,17 @@ struct Breed: Hashable, Identifiable, Codable {
     
     var breedText: String {
         if let subbreed {
-            return "\(subbreed) \(name)"
+            return "\(subbreed) \(name)".capitalized
         } else {
-            return "\(name)"
+            return "\(name)".capitalized
         }
     }
     
     var color: Color? {
         switch (breedText) {
-        case "whippet":
+        case "Whippet":
             return Color.pink
-        case "italian greyhound":
+        case "Italian Greyhound":
             return Color.purple
         default:
             return nil
