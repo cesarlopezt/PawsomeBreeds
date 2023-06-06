@@ -19,7 +19,20 @@
 		DBC05FB32A2EE08500429A76 /* ImageGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC05FB22A2EE08500429A76 /* ImageGrid.swift */; };
 		DBC05FB62A2EE28800429A76 /* FavoritesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC05FB52A2EE28800429A76 /* FavoritesStorage.swift */; };
 		DBC05FB82A2EE5D900429A76 /* FavoritesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC05FB72A2EE5D900429A76 /* FavoritesListView.swift */; };
+		DBC05FCD2A2EF54F00429A76 /* FavoritesStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC05FCC2A2EF54F00429A76 /* FavoritesStorageTests.swift */; };
+		DBC05FD32A2EF5DE00429A76 /* FavoritesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC05FB52A2EE28800429A76 /* FavoritesStorage.swift */; };
+		DBC05FD42A2EF72100429A76 /* Breed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC05FA72A2EAF7F00429A76 /* Breed.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DBC05FCE2A2EF54F00429A76 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DBC05F822A2E538B00429A76 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBC05F892A2E538B00429A76;
+			remoteInfo = PawsomeBreeds;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		DBC05F8A2A2E538B00429A76 /* PawsomeBreeds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PawsomeBreeds.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,10 +49,19 @@
 		DBC05FB22A2EE08500429A76 /* ImageGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGrid.swift; sourceTree = "<group>"; };
 		DBC05FB52A2EE28800429A76 /* FavoritesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesStorage.swift; sourceTree = "<group>"; };
 		DBC05FB72A2EE5D900429A76 /* FavoritesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListView.swift; sourceTree = "<group>"; };
+		DBC05FCA2A2EF54F00429A76 /* PawsomeBreedsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PawsomeBreedsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBC05FCC2A2EF54F00429A76 /* FavoritesStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesStorageTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		DBC05F872A2E538B00429A76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBC05FC72A2EF54F00429A76 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -53,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				DBC05F8C2A2E538B00429A76 /* PawsomeBreeds */,
+				DBC05FCB2A2EF54F00429A76 /* PawsomeBreedsTests */,
 				DBC05F8B2A2E538B00429A76 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				DBC05F8A2A2E538B00429A76 /* PawsomeBreeds.app */,
+				DBC05FCA2A2EF54F00429A76 /* PawsomeBreedsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,6 +149,14 @@
 			path = Storages;
 			sourceTree = "<group>";
 		};
+		DBC05FCB2A2EF54F00429A76 /* PawsomeBreedsTests */ = {
+			isa = PBXGroup;
+			children = (
+				DBC05FCC2A2EF54F00429A76 /* FavoritesStorageTests.swift */,
+			);
+			path = PawsomeBreedsTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,6 +177,24 @@
 			productReference = DBC05F8A2A2E538B00429A76 /* PawsomeBreeds.app */;
 			productType = "com.apple.product-type.application";
 		};
+		DBC05FC92A2EF54F00429A76 /* PawsomeBreedsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBC05FD22A2EF54F00429A76 /* Build configuration list for PBXNativeTarget "PawsomeBreedsTests" */;
+			buildPhases = (
+				DBC05FC62A2EF54F00429A76 /* Sources */,
+				DBC05FC72A2EF54F00429A76 /* Frameworks */,
+				DBC05FC82A2EF54F00429A76 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DBC05FCF2A2EF54F00429A76 /* PBXTargetDependency */,
+			);
+			name = PawsomeBreedsTests;
+			productName = PawsomeBreedsTests;
+			productReference = DBC05FCA2A2EF54F00429A76 /* PawsomeBreedsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -157,6 +207,10 @@
 				TargetAttributes = {
 					DBC05F892A2E538B00429A76 = {
 						CreatedOnToolsVersion = 14.3;
+					};
+					DBC05FC92A2EF54F00429A76 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = DBC05F892A2E538B00429A76;
 					};
 				};
 			};
@@ -174,6 +228,7 @@
 			projectRoot = "";
 			targets = (
 				DBC05F892A2E538B00429A76 /* PawsomeBreeds */,
+				DBC05FC92A2EF54F00429A76 /* PawsomeBreedsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -185,6 +240,13 @@
 			files = (
 				DBC05F962A2E538F00429A76 /* Preview Assets.xcassets in Resources */,
 				DBC05F922A2E538F00429A76 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBC05FC82A2EF54F00429A76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,7 +270,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DBC05FC62A2EF54F00429A76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBC05FD42A2EF72100429A76 /* Breed.swift in Sources */,
+				DBC05FCD2A2EF54F00429A76 /* FavoritesStorageTests.swift in Sources */,
+				DBC05FD32A2EF5DE00429A76 /* FavoritesStorage.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DBC05FCF2A2EF54F00429A76 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DBC05F892A2E538B00429A76 /* PawsomeBreeds */;
+			targetProxy = DBC05FCE2A2EF54F00429A76 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		DBC05F972A2E538F00429A76 /* Debug */ = {
@@ -396,6 +476,47 @@
 			};
 			name = Release;
 		};
+		DBC05FD02A2EF54F00429A76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZF3X33ZS8C;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.clopez.PawsomeBreedsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PawsomeBreeds.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PawsomeBreeds";
+			};
+			name = Debug;
+		};
+		DBC05FD12A2EF54F00429A76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZF3X33ZS8C;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.clopez.PawsomeBreedsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PawsomeBreeds.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PawsomeBreeds";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -413,6 +534,15 @@
 			buildConfigurations = (
 				DBC05F9A2A2E538F00429A76 /* Debug */,
 				DBC05F9B2A2E538F00429A76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBC05FD22A2EF54F00429A76 /* Build configuration list for PBXNativeTarget "PawsomeBreedsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBC05FD02A2EF54F00429A76 /* Debug */,
+				DBC05FD12A2EF54F00429A76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
