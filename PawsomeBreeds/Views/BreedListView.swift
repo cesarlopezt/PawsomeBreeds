@@ -7,19 +7,6 @@
 
 import SwiftUI
 
-struct Row: View {
-    var breed: Breed
-    
-    var body: some View {
-        NavigationLink {
-            BreedDetailView(breed: breed)
-        } label: {
-            Text("\(breed.breedText)")
-        }
-        .listRowBackground(breed.color?.opacity(0.3))
-    }
-}
-
 struct BreedListView: View {
     @State private var result: Result<[Breed], Error>?
 
@@ -29,7 +16,7 @@ struct BreedListView: View {
             case .success(let breeds):
                 List {
                     ForEach(breeds) { breed in
-                        Row(breed: breed)
+                        BreedRow(breed: breed)
                     }
                 }
                 .navigationTitle("Breeds")

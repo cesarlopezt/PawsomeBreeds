@@ -7,39 +7,6 @@
 
 import SwiftUI
 
-struct ImageGrid: View {
-    let colums = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
-    private let imageWidth = 110.0
-    var images: [String]
-    
-    var body: some View {
-        LazyVGrid(columns: colums, alignment: .center, spacing: 5) {
-            ForEach(images, id: \.self) { image in
-                AsyncImage(url: URL(string: image)!) { phase in
-                    switch phase {
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: imageWidth)
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                    case .failure(let error):
-                        let _ = print(error)
-                        Text("Error")
-                            .frame(width: imageWidth, height: imageWidth)
-                    case .empty:
-                        ProgressView()
-                            .frame(width: imageWidth, height: imageWidth)
-                    @unknown default:
-                        Image(systemName: "questionmark")
-                    }
-                }
-            }
-        }
-    }
-    
-}
-
 struct BreedDetailView: View {
     var breed: Breed
     @State private var result: Result<[String], Error>?
