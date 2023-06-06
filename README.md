@@ -4,7 +4,7 @@ PawsomeBreeds is an iOS app designed to provide dog lovers with a comprehensive 
 along with a collection of stunning pictures for each breed. With PawsomeBreeds, you can explore various 
 dog breeds, view their images, and even save your favorite breeds for quick access.
 
-The app has been developed using SwiftUI and utilizes the [Dog CEO API](https://dog.ceo/dog-api/documentation/) to fetch breed and images.
+The app has been developed using SwiftUI and utilizes the [Dog CEO API](https://dog.ceo/dog-api/documentation/) to fetch breeds and images.
 
 ## Features
 
@@ -21,6 +21,8 @@ The app has been developed using SwiftUI and utilizes the [Dog CEO API](https://
 
 
 https://github.com/cesarlopezt/PawsomeBreeds/assets/4370350/6bdc7785-5cf9-4c81-b6d2-afb34740a0a9
+
+https://github.com/cesarlopezt/PawsomeBreeds/assets/4370350/598cb9f3-3aab-452c-a167-bec2776f1bfc
 
 
 
