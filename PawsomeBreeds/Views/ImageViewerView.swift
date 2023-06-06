@@ -12,7 +12,7 @@ struct ImageViewerView: View {
 
     var body: some View {
         VStack {
-            AsyncImage(url: URL(string: image)!) { phase in
+            CacheAsyncImage(url: URL(string: image)!) { phase in
                 switch phase {
                 case .success(let image):
                     image

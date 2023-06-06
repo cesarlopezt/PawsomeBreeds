@@ -18,7 +18,7 @@ struct ImageGrid: View {
                 NavigationLink {
                     ImageViewerView(image: image)
                 } label: {
-                    AsyncImage(url: URL(string: image)!) { phase in
+                    CacheAsyncImage(url: URL(string: image)!) { phase in
                         switch phase {
                         case .success(let image):
                             image
