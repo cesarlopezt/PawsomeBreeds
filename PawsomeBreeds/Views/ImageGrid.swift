@@ -15,25 +15,30 @@ struct ImageGrid: View {
     var body: some View {
         LazyVGrid(columns: colums, alignment: .center, spacing: 5) {
             ForEach(images, id: \.self) { image in
-                AsyncImage(url: URL(string: image)!) { phase in
-                    switch phase {
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: imageWidth)
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                    case .failure(let error):
-                        let _ = print(error)
-                        Text("Error")
-                            .frame(width: imageWidth, height: imageWidth)
-                    case .empty:
-                        ProgressView()
-                            .frame(width: imageWidth, height: imageWidth)
-                    @unknown default:
-                        Image(systemName: "questionmark")
+                NavigationLink {
+                    ImageViewerView(image: image)
+                } label: {
+                    AsyncImage(url: URL(string: image)!) { phase in
+                        switch phase {
+                        case .success(let image):
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: imageWidth)
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                        case .failure(let error):
+                            let _ = print(error)
+                            Text("Error")
+                                .frame(width: imageWidth, height: imageWidth)
+                        case .empty:
+                            ProgressView()
+                                .frame(width: imageWidth, height: imageWidth)
+                        @unknown default:
+                            Image(systemName: "questionmark")
+                        }
                     }
                 }
+
             }
         }
     }

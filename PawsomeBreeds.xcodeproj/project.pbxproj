@@ -22,6 +22,7 @@
 		DBC05FCD2A2EF54F00429A76 /* FavoritesStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC05FCC2A2EF54F00429A76 /* FavoritesStorageTests.swift */; };
 		DBC05FD32A2EF5DE00429A76 /* FavoritesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC05FB52A2EE28800429A76 /* FavoritesStorage.swift */; };
 		DBC05FD42A2EF72100429A76 /* Breed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC05FA72A2EAF7F00429A76 /* Breed.swift */; };
+		DBC05FD82A2F742D00429A76 /* ImageViewerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC05FD72A2F742D00429A76 /* ImageViewerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		DBC05FB72A2EE5D900429A76 /* FavoritesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListView.swift; sourceTree = "<group>"; };
 		DBC05FCA2A2EF54F00429A76 /* PawsomeBreedsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PawsomeBreedsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBC05FCC2A2EF54F00429A76 /* FavoritesStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesStorageTests.swift; sourceTree = "<group>"; };
+		DBC05FD72A2F742D00429A76 /* ImageViewerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				DBC05FB72A2EE5D900429A76 /* FavoritesListView.swift */,
 				DBC05FB02A2EE03700429A76 /* BreedRow.swift */,
 				DBC05FB22A2EE08500429A76 /* ImageGrid.swift */,
+				DBC05FD72A2F742D00429A76 /* ImageViewerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				DBC05F9E2A2E697300429A76 /* Responses.swift in Sources */,
 				DBC05FB12A2EE03700429A76 /* BreedRow.swift in Sources */,
 				DBC05FB32A2EE08500429A76 /* ImageGrid.swift in Sources */,
+				DBC05FD82A2F742D00429A76 /* ImageViewerView.swift in Sources */,
 				DBC05FA82A2EAF7F00429A76 /* Breed.swift in Sources */,
 				DBC05FAD2A2EB7F600429A76 /* BreedDetailView.swift in Sources */,
 				DBC05F8E2A2E538B00429A76 /* PawsomeBreedsApp.swift in Sources */,
