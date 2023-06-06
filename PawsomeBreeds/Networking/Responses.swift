@@ -11,3 +11,8 @@ struct BreedListResponse: Codable {
     let message: BreedList
     let status: String
 }
+
+struct BreedImagesResponse: Codable {
+    let message: [String]
+    let status: String
+}

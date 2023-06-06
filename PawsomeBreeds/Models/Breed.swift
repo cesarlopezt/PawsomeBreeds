@@ -5,7 +5,7 @@
 //  Created by Cesar Lopez on 6/5/23.
 //
 
-import Foundation
+import SwiftUI
 
 struct BreedList: Codable {
     let breeds: [Breed]
@@ -45,4 +45,23 @@ struct Breed: Hashable, Identifiable, Codable {
     var id = UUID()
     let name: String
     let subbreed: String?
+    
+    var breedText: String {
+        if let subbreed {
+            return "\(subbreed) \(name)"
+        } else {
+            return "\(name)"
+        }
+    }
+    
+    var color: Color? {
+        switch (breedText) {
+        case "whippet":
+            return Color.pink
+        case "italian greyhound":
+            return Color.purple
+        default:
+            return nil
+        }
+    }
 }

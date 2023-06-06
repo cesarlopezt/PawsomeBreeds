@@ -10,28 +10,13 @@ import SwiftUI
 struct Row: View {
     var breed: Breed
     
-    var breedText: String {
-        if let subbreed = breed.subbreed {
-            return "\(subbreed) \(breed.name)"
-        } else {
-            return "\(breed.name)"
-        }
-    }
-    
-    var rowColor: Color? {
-        switch (breedText) {
-        case "whippet":
-            return Color.pink
-        case "italian greyhound":
-            return Color.purple
-        default:
-            return nil
-        }
-    }
-    
     var body: some View {
-        Text("\(breedText)")
-            .listRowBackground(rowColor)
+        NavigationLink {
+            BreedDetailView(breed: breed)
+        } label: {
+            Text("\(breed.breedText)")
+        }
+        .listRowBackground(breed.color?.opacity(0.3))
     }
 }
 
