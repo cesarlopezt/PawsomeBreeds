@@ -28,7 +28,7 @@ struct BreedRow: View {
                 Text("\(breed.breedText)")
             }
         }
-        .listRowBackground(breed.color?.opacity(0.3))
+        .listRowBackground(breed.color)
     }
 }
 

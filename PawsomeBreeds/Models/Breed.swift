@@ -59,9 +59,9 @@ struct Breed: Hashable, Identifiable, Codable {
     var color: Color? {
         switch (breedText) {
         case "Whippet":
-            return Color.pink
+            return Color.pink.opacity(0.3)
         case "Italian Greyhound":
-            return Color.purple
+            return Color.purple.opacity(0.3)
         default:
             return nil
         }

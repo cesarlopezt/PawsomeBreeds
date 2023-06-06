@@ -17,8 +17,9 @@ struct BreedDetailView: View {
         case .success(let images):
             ScrollView(showsIndicators: false) {
                 ImageGrid(images: images)
+                    .padding(.vertical)
             }
-            .background(breed.color.opacity(0.3))
+            .background(breed.color)
             .navigationTitle(breed.breedText)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
