@@ -33,9 +33,7 @@ struct BreedDetailView: View {
                     }
                     Button {
                         Task {
-                            await BreedLoader.shared.getImages(breed: breed.name, subbreed: breed.subbreed) {
-                                result = $0
-                            }
+                            result = await BreedLoader.shared.getImages(breed: breed.name, subbreed: breed.subbreed)
                         }
                     } label: {
                         Label("Refresh", systemImage: "arrow.clockwise")
@@ -48,9 +46,7 @@ struct BreedDetailView: View {
         case nil:
             ProgressView()
                 .task {
-                    await BreedLoader.shared.getImages(breed: breed.name, subbreed: breed.subbreed) {
-                        result = $0
-                    }
+                    result = await BreedLoader.shared.getImages(breed: breed.name, subbreed: breed.subbreed)
                 }
         }
     }

@@ -31,9 +31,7 @@ struct BreedListView: View {
                 ProgressView()
                     .navigationTitle("Breeds")
                     .task {
-                        await BreedLoader.shared.getAll {
-                            result = $0
-                        }
+                        result = await BreedLoader.shared.getAll()
                     }
             }
         }

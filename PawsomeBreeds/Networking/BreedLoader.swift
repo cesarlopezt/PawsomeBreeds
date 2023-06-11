@@ -18,19 +18,19 @@ class BreedLoader {
     private let urlSession = URLSession.shared
     let baseURL = "https://dog.ceo/api"
 
-    func getAll(completionHandler: @escaping (Result<[Breed], Error>) -> Void) async {
+    func getAll() async -> Result<[Breed], Error> {
         do {
             guard let url = URL(string: "\(baseURL)/breeds/list/all") else {
                 throw BreedLoaderError.invalidURL
             }
             let response: BreedList = try await self.get(url: url)
-            completionHandler(.success(response.breeds))
+            return .success(response.breeds)
         } catch {
-            completionHandler(.failure(error))
+            return .failure(error)
         }
     }
     
-    func getImages(breed: String, subbreed: String? = nil, num: Int = 15, completionHandler: @escaping (Result<[String], Error>) -> Void) async {
+    func getImages(breed: String, subbreed: String? = nil, num: Int = 15) async -> Result<[String], Error> {
         do {
             let identifier: String
             if let subbreed {
@@ -43,9 +43,9 @@ class BreedLoader {
                 throw BreedLoaderError.invalidURL
             }
             let response: [String] = try await self.get(url: url)
-            completionHandler(.success(response))
+            return .success(response)
         } catch {
-            completionHandler(.failure(error))
+            return .failure(error)
         }
     }
     

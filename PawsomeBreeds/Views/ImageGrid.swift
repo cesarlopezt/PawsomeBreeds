@@ -42,7 +42,6 @@ struct ImageGrid: View {
             }
         }
     }
-    
 }
 
 
